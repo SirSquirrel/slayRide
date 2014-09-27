@@ -5,7 +5,7 @@ public class enemyBehaviour : MonoBehaviour
 {
     //enemy that moves to player when close enough
 
-    public float speed = 50f;
+    public float speed = 10f;
     public Transform player;
     public float enemySight = 1000f;
 
@@ -19,6 +19,7 @@ public class enemyBehaviour : MonoBehaviour
     void FixedUpdate()
     {
 
+		//move and face towards player
         var heading = player.position - transform.position;
 
         var distance = heading.magnitude;
@@ -33,6 +34,16 @@ public class enemyBehaviour : MonoBehaviour
         }
 
 
+	}
 
-    }
+	//die on collision with sled
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.gameObject.name == "Sled"){
+			Destroy(this.gameObject);
+		}
+
+		if(collision.gameObject.name == "Player"){
+			Destroy(player.gameObject);
+		}
+	}
 }
