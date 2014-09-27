@@ -18,7 +18,7 @@ public class enemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+		player = GameObject.Find("Player").transform;
 		//move and face towards player
         var heading = player.position - transform.position;
 
