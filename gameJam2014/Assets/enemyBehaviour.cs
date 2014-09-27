@@ -5,7 +5,7 @@ public class enemyBehaviour : MonoBehaviour
 {
     //enemy that moves to player when close enough
 
-    public float speed = 10f;
+    public float speed = 50f;
     public Transform player;
     public float enemySight = 1000f;
 
@@ -26,8 +26,13 @@ public class enemyBehaviour : MonoBehaviour
 
         if (heading.sqrMagnitude < enemySight * enemySight)
         {
-
+            float angle = Mathf.Atan2(heading.y, heading.x) * Mathf.Rad2Deg;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+            transform.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
         }
+
+
 
     }
 }
