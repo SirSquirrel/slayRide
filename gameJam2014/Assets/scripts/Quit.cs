@@ -5,12 +5,12 @@ public class Quit : MonoBehaviour {
 
 	void OnGUI()
 	{
-		const int buttonWidth = 84;
+		const int buttonWidth = 150;
 		const int buttonHeight = 60;
 
 		Rect buttonRect = new Rect(
 			Screen.width / 2 - (buttonWidth / 2),
-			Screen.height/2,
+			Screen.height/2 +100,
 			buttonWidth,
 			buttonHeight
 			);
