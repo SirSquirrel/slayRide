@@ -8,11 +8,13 @@ public class multEnemy : MonoBehaviour {
 	public Transform player;
 	public Transform player2;
 	public float enemySight = 1000f;
+	private Animator animator;
 
 	
 	// Use this for initialization
 	void Start()
 	{
+		animator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -36,10 +38,12 @@ public class multEnemy : MonoBehaviour {
 
 		if(heading1.magnitude <= heading2.magnitude){
 			toTransform(heading1,player);
+			Face(player);
 		}
 
 		if(heading2.magnitude < heading1.magnitude){
 			toTransform(heading2,player2);
+			Face (player2);
 		}
 		}
 
@@ -51,6 +55,7 @@ public class multEnemy : MonoBehaviour {
 			var distance2 = heading2.magnitude;
 
 			toTransform(heading2,player2);
+			Face(player2);
 		}
 
 		if(KillCountMult.player2Killed)
@@ -60,9 +65,28 @@ public class multEnemy : MonoBehaviour {
 			
 			var distance1 = heading1.magnitude;
 			toTransform(heading1,player);
+			Face(player);
 		}
 		
 
+	}
+
+	void Face(Transform cPlayer)
+	{
+		var heading = cPlayer.position - transform.position;
+		
+		
+		if (heading.x > 0 && heading.x > heading.y) {
+			animator.SetInteger ("Direction", 3);
+		} else if (heading.x < 0 && heading.x < heading.y) {
+			animator.SetInteger ("Direction", 1);
+		} else if (heading.y < 0 && heading.x > heading.y) {
+			animator.SetInteger ("Direction", 0);
+		} else if (heading.y > 0 && heading.x < heading.y) {
+			animator.SetInteger ("Direction", 2);
+		} else if (heading.x == 0 && heading.y == 0) {
+			animator.SetInteger ("Direction", 4);
+		}
 	}
 
 	void toTransform(Vector3 heading,Transform playa)
@@ -76,6 +100,8 @@ public class multEnemy : MonoBehaviour {
 			transform.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(playa.transform.position.x, playa.transform.position.y), Time.deltaTime * speed);
 		}
 	}
+
+
 
 	//die on collision with sled
 	void OnCollisionEnter2D(Collision2D collision){
