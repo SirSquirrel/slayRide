@@ -5,7 +5,7 @@ public class enemyBehaviour : MonoBehaviour
 {
     //enemy that moves to player when close enough
 
-    public float speed = 10f;
+    public float speed = 6f;
     public Transform player;
     public float enemySight = 1000f;
 
@@ -39,7 +39,11 @@ public class enemyBehaviour : MonoBehaviour
 	//die on collision with sled
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.gameObject.name == "Sled"){
+
+			if(collision.relativeVelocity.magnitude>3)
+			{
 			Destroy(this.gameObject);
+			}
 
 		}
 

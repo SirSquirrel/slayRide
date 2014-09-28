@@ -11,11 +11,11 @@ GameObject:
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11400000}
-  - 95: {fileID: 9500000}
   - 114: {fileID: 11400002}
+  - 95: {fileID: 9500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: sEnemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,12 +82,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19c0762e0903c949ac45b4ee4cf1dd4, type: 3}
+  m_Script: {fileID: 11500000, guid: b75f7e629c2013c43ac7c2c7eb5c6d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
   player: {fileID: 0}
-  enemySight: 1000
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,10 +94,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b75f7e629c2013c43ac7c2c7eb5c6d09, type: 3}
+  m_Script: {fileID: 11500000, guid: 585071029941cb94490f22ac1d2a3c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 6
   player: {fileID: 0}
+  enemySight: 1000
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
