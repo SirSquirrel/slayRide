@@ -38,12 +38,7 @@ public class enemyBehaviour : MonoBehaviour
 								transform.position = Vector2.MoveTowards (rigidbody2D.position, new Vector2 (player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
 						}
 				}
-
-		if (!source.isPlaying) {
-			rand = Random.Range (0, clips.Length);
-			source.clip = clips [rand];
-			source.Play ();
-		}
+		StartCoroutine("HoHo");
 	}
 
 	//die on collision with sled
@@ -61,6 +56,16 @@ public class enemyBehaviour : MonoBehaviour
 			puller_control.isDead = true;
 			Destroy(player.gameObject);
 			Application.LoadLevel("menu");
+		}
+	}
+
+	//Coroutine to call the enemy's hohos.
+	IEnumerator HoHo() {
+		if (!source.isPlaying) {
+			rand = Random.Range (0, clips.Length);
+			source.clip = clips [rand];
+			source.Play();
+			yield return new WaitForSeconds(Random.Range(4.0f, 8.0f));
 		}
 	}
 }
