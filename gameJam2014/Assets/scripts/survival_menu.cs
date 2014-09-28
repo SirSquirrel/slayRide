@@ -5,7 +5,7 @@ public class survival_menu : MonoBehaviour {
 	
 		void OnGUI()
 		{
-			const int buttonWidth = 84;
+			const int buttonWidth = 150;
 			const int buttonHeight = 60;
 			
 			// Determine the button's place on screen
