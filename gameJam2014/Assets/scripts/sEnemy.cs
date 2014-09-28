@@ -10,11 +10,13 @@ public class sEnemy : MonoBehaviour {
 	public AudioClip[] clips;
 	public AudioSource source;
 	int rand;
+	static private int hohoindex = 8;
+	static private int deathindex = 11;
 
 	// Use this for initialization
 	void Start()
 	{
-		rand = Random.Range (0, clips.Length);
+		rand = Random.Range (0, hohoindex);
 		source.clip = clips [rand];
 	}
 	
@@ -46,6 +48,9 @@ public class sEnemy : MonoBehaviour {
 		if(collision.gameObject.name == "Sled"){
 			if(collision.relativeVelocity.magnitude>3)
 			{
+				source.Stop();
+				source.clip = clips[Random.Range(hohoindex, deathindex)];
+				AudioSource.PlayClipAtPoint(source.clip, this.transform.position);
 				Destroy(this.gameObject);
 
 				kill_count_Script.kills = kill_count_Script.kills + 1;
@@ -62,10 +67,10 @@ public class sEnemy : MonoBehaviour {
 
 	IEnumerator HoHo() {
 		if (!source.isPlaying) {
-			rand = Random.Range (0, clips.Length);
+			rand = Random.Range (0, hohoindex);
 			source.clip = clips [rand];
 			source.Play();
-			yield return new WaitForSeconds(Random.Range(4.0f, 8.0f));
+			yield return new WaitForSeconds(Random.Range(7.0f, 13.0f));
 		}
 	}
 }

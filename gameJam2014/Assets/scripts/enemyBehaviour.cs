@@ -11,11 +11,13 @@ public class enemyBehaviour : MonoBehaviour
 	public AudioClip[] clips;
 	public AudioSource source;
 	int rand;
+	static private int hohoindex = 8;
+	static private int deathindex = 11;
 
     // Use this for initialization
     void Start()
     {
-		rand = Random.Range (0, clips.Length);
+		rand = Random.Range (0, hohoindex);
 		source.clip = clips [rand];
     }
 
@@ -47,7 +49,10 @@ public class enemyBehaviour : MonoBehaviour
 
 			if(collision.relativeVelocity.magnitude>3)
 			{
-			Destroy(this.gameObject);
+				source.Stop();
+				source.clip = clips[Random.Range(hohoindex, deathindex)];
+				AudioSource.PlayClipAtPoint(source.clip, this.transform.position);
+				Destroy(this.gameObject);
 			}
 
 		}
@@ -62,10 +67,10 @@ public class enemyBehaviour : MonoBehaviour
 	//Coroutine to call the enemy's hohos.
 	IEnumerator HoHo() {
 		if (!source.isPlaying) {
-			rand = Random.Range (0, clips.Length);
+			rand = Random.Range (0, hohoindex);
 			source.clip = clips [rand];
 			source.Play();
-			yield return new WaitForSeconds(Random.Range(4.0f, 8.0f));
+			yield return new WaitForSeconds(Random.Range(5, 10));
 		}
 	}
 }
