@@ -8,10 +8,12 @@ public class enemyBehaviour : MonoBehaviour
     public float speed = 6f;
     public Transform player;
     public float enemySight = 1000f;
+	public AudioSource[] hohos;
 
     // Use this for initialization
     void Start()
     {
+		hohos = GetComponents<AudioSource> ();
     }
 
     // Update is called once per frame
@@ -33,8 +35,8 @@ public class enemyBehaviour : MonoBehaviour
 								transform.position = Vector2.MoveTowards (rigidbody2D.position, new Vector2 (player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
 						}
 				}
-
-
+		
+		hohos [Random.Range (0, hohos.Length)].Play ();
 	}
 
 	//die on collision with sled
