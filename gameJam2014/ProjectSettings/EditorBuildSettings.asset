@@ -27,3 +27,15 @@ EditorBuildSettings:
     path: Assets/youWin.unity
   - enabled: 1
     path: Assets/multSurvival.unity
+  - enabled: 1
+    path: Assets/ChristmasCanceled.unity
+  - enabled: 1
+    path: Assets/Story1.unity
+  - enabled: 1
+    path: Assets/Story2.unity
+  - enabled: 1
+    path: Assets/Story3.unity
+  - enabled: 1
+    path: Assets/Story4.unity
+  - enabled: 1
+    path: Assets/Story5.unity

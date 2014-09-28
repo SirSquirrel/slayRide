@@ -53,6 +53,8 @@
      <Compile Include="Assets\scripts\P2Control.cs" />
      <Compile Include="Assets\scripts\P2Move.cs" />
      <Compile Include="Assets\scripts\Quit.cs" />
+     <Compile Include="Assets\scripts\advanceByAny.cs" />
+     <Compile Include="Assets\scripts\backToMenuWithAny.cs" />
      <Compile Include="Assets\scripts\backgroundMusic.cs" />
      <Compile Include="Assets\scripts\enemyBehaviour.cs" />
      <Compile Include="Assets\scripts\kill_count_Script.cs" />
