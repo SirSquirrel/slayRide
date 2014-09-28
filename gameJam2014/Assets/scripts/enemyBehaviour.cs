@@ -12,7 +12,6 @@ public class enemyBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -29,7 +28,8 @@ public class enemyBehaviour : MonoBehaviour
         {
             float angle = Mathf.Atan2(heading.y, heading.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+
+            //transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
             transform.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
         }
 
@@ -40,10 +40,12 @@ public class enemyBehaviour : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.gameObject.name == "Sled"){
 			Destroy(this.gameObject);
+
 		}
 
 		if(collision.gameObject.name == "Player"){
 			Destroy(player.gameObject);
+			Application.LoadLevel("menu");
 		}
 	}
 }
