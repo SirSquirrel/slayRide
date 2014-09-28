@@ -68,7 +68,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: e5a56228595620a4699986c42f9d7ce3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -147,6 +147,14 @@ MonoBehaviour:
   speed: 6
   player: {fileID: 0}
   enemySight: 1000
+  clips:
+  - {fileID: 8300000, guid: c2efd0d1bc28ce940947efbb4d689391, type: 3}
+  - {fileID: 8300000, guid: c42750b5cee027e44b406ecf9d8ef78a, type: 3}
+  - {fileID: 8300000, guid: 8b0ceb5d2860f644ca3dc972b6bf258f, type: 3}
+  - {fileID: 8300000, guid: e5a56228595620a4699986c42f9d7ce3, type: 3}
+  - {fileID: 8300000, guid: ac85d2277775ae94180641ec4f3f11f5, type: 3}
+  - {fileID: 8300000, guid: 628ea23da64f8cc4bb1dbe3946f78f99, type: 3}
+  source: {fileID: 8200000}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
