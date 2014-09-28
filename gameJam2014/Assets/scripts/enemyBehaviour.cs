@@ -17,21 +17,22 @@ public class enemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		player = GameObject.Find("Player").transform;
-		//move and face towards player
-        var heading = player.position - transform.position;
+		if (!puller_control.isDead) {
+						player = GameObject.Find ("Player").transform;
+						//move and face towards player
+						var heading = player.position - transform.position;
 
-        var distance = heading.magnitude;
-        var direction = heading / distance;
+						var distance = heading.magnitude;
+						var direction = heading / distance;
 
-        if (heading.sqrMagnitude < enemySight * enemySight)
-        {
-            float angle = Mathf.Atan2(heading.y, heading.x) * Mathf.Rad2Deg;
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+						if (heading.sqrMagnitude < enemySight * enemySight) {
+								float angle = Mathf.Atan2 (heading.y, heading.x) * Mathf.Rad2Deg;
+								Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
 
-            //transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
-            transform.position = Vector2.MoveTowards(rigidbody2D.position, new Vector2(player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
-        }
+								//transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+								transform.position = Vector2.MoveTowards (rigidbody2D.position, new Vector2 (player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
+						}
+				}
 
 
 	}
@@ -48,6 +49,7 @@ public class enemyBehaviour : MonoBehaviour
 		}
 
 		if(collision.gameObject.name == "Player"){
+			puller_control.isDead = true;
 			Destroy(player.gameObject);
 			Application.LoadLevel("menu");
 		}

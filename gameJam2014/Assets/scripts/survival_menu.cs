@@ -10,13 +10,17 @@ public class survival_menu : MonoBehaviour {
 			
 			Rect buttonRect = new Rect(
 				Screen.width / 2 - (buttonWidth / 2),
-			    (2 * Screen.height / 5) - (buttonHeight / 2),
+			    (Screen.height / 2) - (buttonHeight / 2),
 				buttonWidth,
 				buttonHeight
 				);
-			
-			if(GUI.Button(buttonRect,"Survival!"))
-			{
+		GUIStyle invisibox;
+		invisibox = new GUIStyle ();
+		//invisibox.alignment = TextAnchor.MiddleCenter;
+		//invisibox.normal.textColor = new Color(0,100,0);
+		//invisibox.fontSize = 30;
+		
+		if(GUI.Button(buttonRect,"",invisibox)){
 				Application.LoadLevel("Survival");
 			}
 		}

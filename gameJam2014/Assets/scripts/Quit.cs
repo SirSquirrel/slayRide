@@ -9,13 +9,19 @@ public class Quit : MonoBehaviour {
 		const int buttonHeight = 60;
 
 		Rect buttonRect = new Rect(
-			Screen.width / 2 - (buttonWidth / 2),
-			Screen.height/2 +100,
+			Screen.width / 2 - (buttonWidth / 2) +400,
+			(Screen.height / 2) - (buttonHeight / 2),
 			buttonWidth,
 			buttonHeight
 			);
 
-		if(GUI.Button(buttonRect,"Quit!"))
+		GUIStyle invisibox;
+		invisibox = new GUIStyle ();
+		//invisibox.alignment = TextAnchor.MiddleCenter;
+		//invisibox.normal.textColor = new Color(0,100,0);
+		//invisibox.fontSize = 30;
+		
+		if(GUI.Button(buttonRect,"",invisibox))
 		{
 			Application.Quit();
 		}

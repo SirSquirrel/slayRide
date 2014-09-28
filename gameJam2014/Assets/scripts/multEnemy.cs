@@ -20,6 +20,8 @@ public class multEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if(!KillCountMult.playerKilled || !KillCountMult.player2Killed)
+		{
 		if(!KillCountMult.playerKilled&& !KillCountMult.player2Killed)
 		{
 		player = GameObject.Find("Player").transform;
@@ -66,6 +68,7 @@ public class multEnemy : MonoBehaviour {
 			var distance1 = heading1.magnitude;
 			toTransform(heading1,player);
 			Face(player);
+		}
 		}
 		
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class P2Control : MonoBehaviour {
 	
 	public float maxSpeed = 10f;
-	
+	public bool isDead = false;
 	// Use this for initialization
 	void Start () {
 		
