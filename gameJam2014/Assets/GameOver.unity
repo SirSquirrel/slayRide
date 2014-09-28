@@ -74,28 +74,29 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &1001483916
+--- !u!1 &1118584151
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1001483918}
-  - 212: {fileID: 1001483917}
+  - 4: {fileID: 1118584153}
+  - 212: {fileID: 1118584152}
+  - 114: {fileID: 1118584154}
   m_Layer: 0
-  m_Name: win
+  m_Name: lose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1001483917
+--- !u!212 &1118584152
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1001483916}
+  m_GameObject: {fileID: 1118584151}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -110,32 +111,43 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9ac9f4e1f242cb943ac1238fce7f6111, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db2237e280fb53b499dfaa36e59a3acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &1001483918
+--- !u!4 &1118584153
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1001483916}
+  m_GameObject: {fileID: 1118584151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0384905338, y: .0129985809, z: 0}
-  m_LocalScale: {x: 2.2205801, y: 2.22058153, z: 1}
+  m_LocalPosition: {x: .12756753, y: .0891265869, z: 0}
+  m_LocalScale: {x: 1.42594075, y: 1.42593181, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &1502054932
+--- !u!114 &1118584154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118584151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f9c080beea71346992cbf3800e1551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1702143388
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1502054937}
-  - 20: {fileID: 1502054936}
-  - 92: {fileID: 1502054935}
-  - 124: {fileID: 1502054934}
-  - 81: {fileID: 1502054933}
+  - 4: {fileID: 1702143393}
+  - 20: {fileID: 1702143392}
+  - 92: {fileID: 1702143391}
+  - 124: {fileID: 1702143390}
+  - 81: {fileID: 1702143389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -143,33 +155,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1502054933
+--- !u!81 &1702143389
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502054932}
+  m_GameObject: {fileID: 1702143388}
   m_Enabled: 1
---- !u!124 &1502054934
+--- !u!124 &1702143390
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502054932}
+  m_GameObject: {fileID: 1702143388}
   m_Enabled: 1
---- !u!92 &1502054935
+--- !u!92 &1702143391
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502054932}
+  m_GameObject: {fileID: 1702143388}
   m_Enabled: 1
---- !u!20 &1502054936
+--- !u!20 &1702143392
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502054932}
+  m_GameObject: {fileID: 1702143388}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -196,12 +208,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!4 &1502054937
+--- !u!4 &1702143393
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502054932}
+  m_GameObject: {fileID: 1702143388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}

@@ -26,6 +26,7 @@ public class IntroButton : MonoBehaviour {
 		
 		if(GUI.Button(buttonRect,"",invisibox))
 		{
+			backgroundMusic.Instance.audio.Stop();
 			Application.LoadLevel("ChristmasCanceled");
 		}
 	}
