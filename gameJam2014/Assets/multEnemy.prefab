@@ -13,6 +13,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: multEnemy
   m_TagString: enemy
@@ -58,6 +59,64 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -88,6 +147,16 @@ MonoBehaviour:
   player: {fileID: 0}
   player2: {fileID: 0}
   enemySight: 1000
+  clips:
+  - {fileID: 8300000, guid: c2efd0d1bc28ce940947efbb4d689391, type: 3}
+  - {fileID: 8300000, guid: c42750b5cee027e44b406ecf9d8ef78a, type: 3}
+  - {fileID: 8300000, guid: 8b0ceb5d2860f644ca3dc972b6bf258f, type: 3}
+  - {fileID: 8300000, guid: e5a56228595620a4699986c42f9d7ce3, type: 3}
+  - {fileID: 8300000, guid: ac85d2277775ae94180641ec4f3f11f5, type: 3}
+  - {fileID: 8300000, guid: 628ea23da64f8cc4bb1dbe3946f78f99, type: 3}
+  - {fileID: 8300000, guid: df798aca16dffa947ad56d65d5987cbb, type: 3}
+  - {fileID: 8300000, guid: 2c91dee0326666c4ba2816aa6079dea3, type: 3}
+  source: {fileID: 8200000}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

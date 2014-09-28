@@ -55,7 +55,7 @@ public class enemyBehaviour : MonoBehaviour
 		if(collision.gameObject.name == "Player"){
 			puller_control.isDead = true;
 			Destroy(player.gameObject);
-			Application.LoadLevel("menu");
+			Application.LoadLevel("GameOver");
 		}
 	}
 

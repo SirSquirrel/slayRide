@@ -7,10 +7,15 @@ public class sEnemy : MonoBehaviour {
 	public float speed = 6f;
 	public Transform player;
 	public float enemySight = 1000f;
-	
+	public AudioClip[] clips;
+	public AudioSource source;
+	int rand;
+
 	// Use this for initialization
 	void Start()
 	{
+		rand = Random.Range (0, clips.Length);
+		source.clip = clips [rand];
 	}
 	
 	// Update is called once per frame
@@ -32,7 +37,7 @@ public class sEnemy : MonoBehaviour {
 				transform.position = Vector2.MoveTowards (rigidbody2D.position, new Vector2 (player.transform.position.x, player.transform.position.y), Time.deltaTime * speed);
 			}
 		}
-		
+		StartCoroutine("HoHo");
 		
 	}
 	
@@ -51,7 +56,16 @@ public class sEnemy : MonoBehaviour {
 		if(collision.gameObject.name == "Player"){
 			Destroy(player.gameObject);
 			puller_control.isDead = true;
-			Application.LoadLevel("menu");
+			Application.LoadLevel("GameOver");
+		}
+	}
+
+	IEnumerator HoHo() {
+		if (!source.isPlaying) {
+			rand = Random.Range (0, clips.Length);
+			source.clip = clips [rand];
+			source.Play();
+			yield return new WaitForSeconds(Random.Range(4.0f, 8.0f));
 		}
 	}
 }

@@ -22,7 +22,7 @@ public class KillCountMult : MonoBehaviour {
 		kText.text = "P1:" + kills1.ToString() + System.Environment.NewLine + "P2:" + kills2.ToString();
 
 		if (playerKilled && player2Killed) {
-			Application.LoadLevel ("menu");
+			Application.LoadLevel ("GameOver");
 		}
 	}
 }

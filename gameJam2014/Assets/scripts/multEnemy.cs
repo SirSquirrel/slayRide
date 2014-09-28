@@ -9,11 +9,15 @@ public class multEnemy : MonoBehaviour {
 	public Transform player2;
 	public float enemySight = 1000f;
 	private Animator animator;
-
+	public AudioClip[] clips;
+	public AudioSource source;
+	int rand;
 	
 	// Use this for initialization
 	void Start()
 	{
+		rand = Random.Range (0, clips.Length);
+		source.clip = clips [rand];
 		animator = this.GetComponent<Animator>();
 	}
 	
@@ -71,7 +75,7 @@ public class multEnemy : MonoBehaviour {
 		}
 		}
 		
-
+		StartCoroutine("HoHo");
 	}
 
 	void Face(Transform cPlayer)
@@ -137,6 +141,15 @@ public class multEnemy : MonoBehaviour {
 			Destroy(collision.gameObject);
 			KillCountMult.player2Killed = true;
 
+		}
+	}
+
+	IEnumerator HoHo() {
+		if (!source.isPlaying) {
+			rand = Random.Range (0, clips.Length);
+			source.clip = clips [rand];
+			source.Play();
+			yield return new WaitForSeconds(Random.Range(4.0f, 8.0f));
 		}
 	}
 }

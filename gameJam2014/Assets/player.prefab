@@ -457,7 +457,7 @@ AudioSource:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 9a71ff0107cbb1945908ef0ec2c1cd3b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7c9fe6e0a9b3eef44935718e8b41d313, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -500,8 +500,8 @@ AudioSource:
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: 0
+    - time: .0798479021
+      value: .0459183678
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -517,7 +517,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 7f9abec79e128ed4d89b9b48b60dbef3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .0890000015
   m_Pitch: 1
   Loop: 0
   Mute: 0
