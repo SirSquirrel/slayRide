@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\enemyBehaviour.cs" />
      <Compile Include="Assets\playButton.cs" />
+     <Compile Include="Assets\player_movement.cs" />
      <Compile Include="Assets\puller_control.cs" />
      <Compile Include="Assets\spawnScript.cs" />
   </ItemGroup>
