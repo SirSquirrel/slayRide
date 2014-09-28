@@ -5,9 +5,7 @@ public class MenuPlay : MonoBehaviour {
 	
 		void OnGUI()
 		{
-		GUI.color = Color.green;
-		GUIStyle invisibox;
-			const int buttonWidth = 150;
+			const int buttonWidth = 84;
 			const int buttonHeight = 60;
 			
 			// Determine the button's place on screen
@@ -18,11 +16,9 @@ public class MenuPlay : MonoBehaviour {
 				buttonWidth,
 				buttonHeight
 				);
-		invisibox = new GUIStyle ();
-		invisibox.alignment = TextAnchor.MiddleCenter;
-
 			
-		if(GUI.Button(buttonRect,"Start!",invisibox))
+			// Draw a button to start the game
+			if(GUI.Button(buttonRect,"Start!"))
 			{
 				Application.LoadLevel("ok this is a map");
 			}
