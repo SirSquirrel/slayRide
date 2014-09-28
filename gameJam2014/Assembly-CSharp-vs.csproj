@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\enemyBehaviour.cs" />
+     <Compile Include="Assets\playButton.cs" />
      <Compile Include="Assets\puller_control.cs" />
      <Compile Include="Assets\spawnScript.cs" />
   </ItemGroup>
