@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19c0762e0903c949ac45b4ee4cf1dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   player: {fileID: 0}
   enemySight: 1000
   clips:
